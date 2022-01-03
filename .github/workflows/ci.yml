@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    branches:
+    - 'main'
+
+jobs:
+  docker:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+    - name: Build and push
+      working-directory: .
+      run: |
+        docker login -u $env:USER -p $env:PASS
+        docker build -t 3dbrows/dotnet-core-sonar-rh:3.1.301 .
+        docker image push 3dbrows/dotnet-core-sonar-rh:3.1.301
+      env:
+        USER: ${{ secrets.DOCKER_USER }}
+        PASS: ${{ secrets.DOCKER_PASS }}
