@@ -1,2 +1,2 @@
-# dotnet-core-awscli-rh
-dotnet core SDK with AWS CLI and Roundhouse installed
+# dotnet-core-sonar-rh
+dotnet core SDK with SonarScanner and AWS CLI installed
