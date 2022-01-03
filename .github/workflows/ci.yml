@@ -13,7 +13,7 @@ jobs:
     - name: Build and push
       working-directory: .
       run: |
-        docker login -u $env:USER -p $env:PASS
+        docker login -u $USER -p $PASS
         docker build -t 3dbrows/dotnet-core-sonar-rh:3.1.301 .
         docker image push 3dbrows/dotnet-core-sonar-rh:3.1.301
       env:
